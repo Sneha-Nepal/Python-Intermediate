@@ -9,4 +9,4 @@ To push my learning journey further, I have added unique features and design imp
 
 ## SSH Keys:
 
-I learned how to implement the `SSH keys` for the verified bagde in the folders that are pushed in this repository. Projects that are pushed in `Python-Beginner` repository were also pushed from the same device, but there was no `verified` badge as SSH key was not known to me back then.
+I learned how to implement the `SSH keys` to obtain the verified bagde in the folders that are pushed in this repository. Projects that are pushed in `Python-Beginner` repository were also pushed from the same device, but there was no `verified` badge as SSH key was not known to me back then.
