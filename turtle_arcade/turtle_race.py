@@ -1,41 +1,65 @@
-from turtle import Turtle, Screen
 import random
+import time
+from turtle import Turtle, Screen
+from score import Scoreboard
 
-# Objects
-turtles = [Turtle(shape="turtle") for _ in range(6)]
-screen = Screen()
-screen.setup(width=500, height=400)
+class TurtleRace:
+    def __init__(self, screen: Screen):
+        """Contructor function for initializing the class"""
+        self.screen = screen
+        self.colors = ["red", "orange", "cyan", "green", "blue", "purple"]
+        self.turtles = []
+        self.score = None  
 
-is_game_on = False
-colors = ["red", "orange", "cyan", "green", "blue", "purple"]
-user_choice = screen.textinput(title="Turtle Race", prompt="Predict the winning turtle: ")
+    def setup_game(self):
+        self.screen.clearscreen()
+        self.screen.bgcolor("black")
+        self.screen.tracer(1)
+        self.turtles.clear()
+        
+        
+        self.score = Scoreboard()
+        self.score.color("white")
 
-y_cordinate = -100
-for turtle_index in range(len(turtles)):
-    turtles[turtle_index].penup()
-    turtles[turtle_index].color(colors[turtle_index]) 
-    turtles[turtle_index].goto(x=-225, y=y_cordinate)
-    y_cordinate += 40
+        y_coordinate = -200
+        for color in self.colors:
+            turtle_car = Turtle(shape="turtle")
+            turtle_car.shapesize(stretch_len=1.5, stretch_wid=1.5)
+            turtle_car.penup()
+            turtle_car.color(color)
+            turtle_car.goto(x=-290, y=y_coordinate)
+            self.turtles.append(turtle_car)
+            y_coordinate += 80
 
-if user_choice in colors:
+    def start(self):
+        """Functionality of the game"""
+        self.setup_game()
+        user_choice = self.screen.textinput(
+            title="Turtle Race", 
+            prompt=f"Predict winner ({', '.join(self.colors)}):"
+        )
+        
+        if user_choice.lower() not in self.colors:
+            print("Invalid or canceled choice.")
+            return
+
+        user_choice = user_choice.lower()
         is_game_on = True
-        print("Yes, the turtle is available!")
-
-while is_game_on:
-    for turtle in turtles:
-        if turtle.xcor() > 225:
-            is_game_on = False
-            winning_color = turtle.pencolor()
-            if winning_color == user_choice:
-                print("You WIN!!")
-            else:
-                print(f"You LOSE!! The winner is '{winning_color.upper()}' turtle.")
-
-            break
-
-        random_distance = random.randint(1, 15)
-        turtle.forward(random_distance)
-
-
-print("Game Over!")
-screen.mainloop()
+        while is_game_on:
+            for turtle in self.turtles:
+                # Reached the finish line
+                if turtle.xcor() > 250:
+                    is_game_on = False
+                    winning_color = turtle.pencolor()
+                    
+                    if winning_color == user_choice:
+                        self.score.write_message("You WIN!!")
+                        print("You WIN!!")
+                    else:
+                        message = f"You LOSE!! Winner: {winning_color.upper()}"
+                        self.score.write_message(message)
+                        print(message)
+                        time.sleep(2.5)     # To display the message for few seconds
+                    break
+                
+                turtle.forward(random.randint(1, 15))

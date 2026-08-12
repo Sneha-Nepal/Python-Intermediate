@@ -1,28 +1,29 @@
-# Turtle Race Game
+# Turtle Arcade
 
-Turtle Race Game is ann interactive Python game built using the `turtle` graphics module. This project was created to demonstrate GUI interaction, and object positioning in Python.
+Turtle Arcade is an interactive Python application built using Python's `turtle` graphics module. I had initially made two seperate programs called `turtle_race` and `turtle_crossing`. Later, I decided to combine it and create a `Turtle Arcade` game.
+
+### Games Included
+
+* **Turtle Race:** A fast-paced guessing game where six colored turtles dash across a black track with randomized speeds to see if your predicted turtle crosses the finish line first.
+* **Turtle Crossing:** A classic arcade challenge where you steer a player turtle through increasingly fast lanes of moving brick obstacles to level up without getting hit.
 
 ## Features
 
-* **Multi-Turtle Racing:** Spawns multiple colored turtle objects using OOP aligned at the starting line.
-* **User Interaction:** Interactive popup window asking the user to predict the winning turtle before the race starts.
-* **Randomized Movement:** Implements a randomized movement algorithm to have different racing outcomes.
+* **Arcade Menu Controller:** A central launcher that manages screen state and allows seamless transitions between distinct games.
+* **Multi-Turtle Racing:** Spawns multiple colored turtle objects using OOP, aligned symmetrically at the starting line on a dark mode canvas.
+* **Speed Incrementation:** Incrematically accelerates brick traffic each time the player successfully crosses the top finish line.
+* **On-Screen Displays:** Shared scoreboard component that renders level progress, winner announcements, and game-over states dynamically on top of the canvas.
 
-## Uniqueness
+## Turtle Graphics
 
-The uniqueness feature is currently in development.
-
-* **Curved Track Racing (Planned):** Instead of a standard straight-line dash, the goal is to first draw a custom curved racing track using the turtle pen.
-* **Track Following Race:** Two selected turtles will then race along this custom curved path, tracking the drawn directions and curves rather than just moving linearly across the screen.
-
-## Turtle Graphics Integration
-
-* **Object Building:** Uses list comprehension to initialize multiple `Turtle` instances with distinct properties and colors.
-* **Coordinate Mapping:** Pre-calculates custom `x` and `y` coordinates to line up turtles evenly on the starting line.
-* **GUI Prompting:** Uses `screen.textinput()` to integrate graphical user input into the control flow.
+* **Object Building:** Uses OOP classes and inheritance to initialize and manage distinct game entities like player controls, obstacle managers, and scoreboards.
+* **Canvas Resetting & State Management:** Handles full canvas re-initialization (`clearscreen()`, custom `bgcolor`, and `tracer` control) when switching between games.
+* **GUI Prompting:** Uses `screen.textinput()` to integrate graphical input dialogs directly into the application loop.
 
 ## Concepts Learned & Applied
 
 * **Graphical User Interfaces (GUI):** Setting up screen dimensions, handling window mainloops, and managing visual canvases.
-* **List Comprehension & Loops:** Efficiently generating lists of objects and iterating through them to control animation state.
+* **Object-Oriented Programming (OOP):** Applied encapsulation and modular design to structure distinct game logic into separate classes and files.
+* **Collision Detection:** Calculated bounding box distance mathematics using `xcor()` and `ycor()` to trigger accurate game-over conditions.
+* **Game Loops & Timing:** Utilized `tracer(0)`, manual `screen.update()` calls, and `time.sleep()` to control animation frame rates and ensure game text remains visible before returning to menus.
 * **Randomization & Coordinates:** Utilizing `random.randint()` alongside turtle coordinate tracking (`xcor()`, `goto()`) for gameplay mechanics.
