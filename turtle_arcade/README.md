@@ -4,12 +4,12 @@ Turtle Arcade is an interactive Python application built using Python's `turtle`
 
 ### Games Included
 
-* **Turtle Race:** A fast-paced guessing game where six colored turtles dash across a black track with randomized speeds to see if your predicted turtle crosses the finish line first.
-* **Turtle Crossing:** A classic arcade challenge where you steer a player turtle through increasingly fast lanes of moving brick obstacles to level up without getting hit.
+* **Turtle Race:** A guessing game where six colored turtles move across a black track with randomized speeds to see if your predicted turtle crosses the finish line first.
+* **Turtle Crossing:** A classic arcade challenge where the player steers the turtle through increasingly fast lanes of moving brick obstacles to level up without getting hit.
 
 ## Features
 
-* **Arcade Menu Controller:** A central launcher that manages screen state and allows seamless transitions between distinct games.
+* **Arcade Menu Controller:** A central launcher that manages screen and allows seamless transitions between distinct games.
 * **Multi-Turtle Racing:** Spawns multiple colored turtle objects using OOP, aligned symmetrically at the starting line on a dark mode canvas.
 * **Speed Incrementation:** Incrematically accelerates brick traffic each time the player successfully crosses the top finish line.
 * **On-Screen Displays:** Shared scoreboard component that renders level progress, winner announcements, and game-over states dynamically on top of the canvas.
@@ -24,6 +24,6 @@ Turtle Arcade is an interactive Python application built using Python's `turtle`
 
 * **Graphical User Interfaces (GUI):** Setting up screen dimensions, handling window mainloops, and managing visual canvases.
 * **Object-Oriented Programming (OOP):** Applied encapsulation and modular design to structure distinct game logic into separate classes and files.
-* **Collision Detection:** Calculated bounding box distance mathematics using `xcor()` and `ycor()` to trigger accurate game-over conditions.
+* **Collision Detection:** Calculate brick's distance using `xcor()` and `ycor()` for accurate game-over conditions.
 * **Game Loops & Timing:** Utilized `tracer(0)`, manual `screen.update()` calls, and `time.sleep()` to control animation frame rates and ensure game text remains visible before returning to menus.
-* **Randomization & Coordinates:** Utilizing `random.randint()` alongside turtle coordinate tracking (`xcor()`, `goto()`) for gameplay mechanics.
+* **Randomization & Coordinates:** Utilizing `random.randint()` alongside turtle coordinate by tracking (`xcor()`, `goto()`) for gameplay.
