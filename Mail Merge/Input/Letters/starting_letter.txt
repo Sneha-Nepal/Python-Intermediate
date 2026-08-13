@@ -1,0 +1,8 @@
+Dear [name],
+
+How have you been? Anything new you wanna talk about?
+I am doing Mail MergePRoject righ now. The file path is intentionally made complicated to practice 
+'Absolute' and 'Relative' path.
+
+Sneha Nepal
+Kathmandu, Nepal
