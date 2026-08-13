@@ -56,3 +56,10 @@ class Snake:
         "On pressing the 'Left' arrow, Snake changs its direction to West"
         if self.segments[0].heading() != 0:
             self.segments[0].setheading(180)
+
+    def reset(self):
+        """Hides the leftover parts of the snakefrom old game for new snake in new game"""
+        for seg in self.segments:
+            seg.hideturtle()
+        self.segments.clear()
+        self.create_snake()
