@@ -9,6 +9,7 @@ screen.setup(width=1200, height=800)
 
 
 def get_coordinates(x,y):
+    """To get coordinates on click on the screen"""
     print(x,y)
 turtle.onscreenclick(get_coordinates)
 

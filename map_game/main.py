@@ -6,6 +6,7 @@ FOLDER_PATH = "map_game/"
 s = turtle.Screen()
 chosen_country = s.textinput(title="Choose a country: ", prompt="Nepal or USA").upper()
 
+# For USA
 if chosen_country == "USA":
     game = MapGame(
         image=f"{FOLDER_PATH}map_states_img.gif",
@@ -13,6 +14,8 @@ if chosen_country == "USA":
         name_column="state",
         not_guessed_path=f"{FOLDER_PATH}missed_states.csv"
     )
+
+# For Nepal
 elif chosen_country == "NEPAL":
     game = MapGame(
         image=f"{FOLDER_PATH}map_NEPAL_img.gif",
@@ -20,10 +23,10 @@ elif chosen_country == "NEPAL":
         name_column="province",
         not_guessed_path=f"{FOLDER_PATH}missed_provinces.csv"
     )
+
 else:
     print("Choose only Nepal or USA")
     game = None
 
 if game:
     game.play()
-    
