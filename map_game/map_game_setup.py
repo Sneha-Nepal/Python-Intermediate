@@ -7,7 +7,7 @@ class MapGame:
         self.image = image
         self.data = pd.read_csv(csv_file)
         self.name_column = name_column
-        self.items = self.data[name_column].to_list()
+        self.places = self.data[name_column].to_list()
         self.guessed = []
         self.not_guessed_path = not_guessed_path
 
@@ -31,16 +31,13 @@ class MapGame:
 
     def missing_places(self):
         """Saves the unguessed places in a csv file"""
-        missed_guess = []
-        for item in self.items:
-            if item not in self.guessed:
-                missed_guess.append(item)
+        missed_guess = [place for place in self.places if place not in self.guessed]
         new_data = pd.DataFrame(missed_guess)
         new_data.to_csv(self.not_guessed_path)
 
     def play(self):
         """THe main functionality of the game. Loops for multiple user guesses and calls other methods sequentially"""
-        total = len(self.items)
+        total = len(self.places)
 
         while len(self.guessed) < total:
             guess = self.screen.textinput(
@@ -52,7 +49,7 @@ class MapGame:
                 self.missing_places()
                 break
 
-            if guess in self.items and guess not in self.guessed:
+            if guess in self.places and guess not in self.guessed:
                 self.guessed.append(guess)
                 self.label(guess)
 
