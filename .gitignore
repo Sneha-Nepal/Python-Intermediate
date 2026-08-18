@@ -7,3 +7,4 @@
 
 # Ignore test.py which is file for testing simple syntax
 test.py
+miles_to_km.py
