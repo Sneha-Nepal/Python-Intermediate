@@ -3,7 +3,7 @@
 Pomodoro Clock is a timer built with Python's `tkinter` library, based on the Pomodoro Technique. This project was built to practice GUI development and event-driven programming.
 
 <details>
-  <summary>Click to view screenshots</summary>
+  <summary><h3>Click to view screenshot</h3></summary>
 
   <img src="assets/output_screenshot.png" width="400" alt="Screenshot">
 </details>
