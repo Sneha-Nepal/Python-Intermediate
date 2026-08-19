@@ -2,12 +2,12 @@ from tkinter import *
 import math
 
 # The following time are in minutes
-PIC_PATH = "pomodoro_clock/watch_pic.png"
-FONT = ("Courier", 50, "bold")
-BTN_FONT = ("Courier", 15, "bold")
 WORK_TIME = 25
 SHORT_BREAK = 5
 LONG_BREAK = 20
+PIC_PATH = "pomodoro_clock/assets/watch_pic.png"
+FONT = ("Courier", 50, "bold")
+BTN_FONT = ("Courier", 15, "bold")
 BG_COLOR = "#118AB2"
 CHECK_MARK = "🗹"
 
@@ -84,7 +84,7 @@ canvas.create_image(300, 250, image=watch_pic)
 timer_text = canvas.create_text(300, 280, text="00:00", fill="white", font=FONT)
 canvas.pack()
 
-# Button wrappe dunder Frame container
+# Button wrapped under Frame container. 
 btn_frame = Frame(screen, bg=BG_COLOR)
 btn_frame.pack(pady=20)
 
