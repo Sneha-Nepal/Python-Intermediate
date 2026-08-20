@@ -3,7 +3,7 @@ from tkinter import messagebox as mbox
 from password_generator import password
 
 # Constants
-PIC_PATH = "password_manager/lock_img.png"
+PIC_PATH = "password_manager/assets/lock_img.png"
 FONT = ("Courier", 10, "bold")
 CSV_FILE = "password_manager/saving.csv"
 
