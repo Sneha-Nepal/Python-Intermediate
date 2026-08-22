@@ -7,6 +7,10 @@ Password Manager is built with Python's `tkinter` library that generates strong 
   <img src="assets/output.png" width="300" alt="Screenshot">
 </details>
 
+## Update:
+* Switched local storage from CSV to JSON. Entries are now saved as a dictionary key as website (`website: {email, password}`) instead of flat rows.
+* Added a **Search** button that looks up a website's saved email and password and displays them in a popup.
+
 ## Features
 
 The app is split into two files: `main.py` handles the GUI and file-saving logic, while `password_generator.py` handles password creation.
@@ -23,4 +27,4 @@ The app is split into two files: `main.py` handles the GUI and file-saving logic
 * **Grid Layout:** Using `.grid()` with `column`, `row`, and `columnspan` to arrange labels, entries, and buttons into a structured form.
 * **Entry Widgets:** Using `Entry` for user input, along with `.insert()` to pre-fill default text and `.delete(0, END)` to clear fields after submission.
 * **Separation of Concerns:** Keeping password generation logic in its own module (`password_generator.py`) and importing it into `main.py`, rather than mixing generation logic with the GUI code.
-* **File I/O:** Using Python's built-in `open()` with append mode (`"a"`) to persist data across sessions without needing a database.
+* **File I/O:** Using Python's built-in `json` module (`json.load()` / `json.dump()`) to read and persist data across sessions without needing a database.

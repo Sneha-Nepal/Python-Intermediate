@@ -4,12 +4,13 @@ letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '*', '+']
 
-password_letter = [random.choice(letters) for _ in range(random.randint(4, 6))]
-password_symbol = [random.choice(symbols) for _ in range(random.randint(2, 4))]
-password_number = [random.choice(numbers) for _ in range(random.randint(2, 4))]
+def fresh_password():
+    """Generates fresh new password as combination of letters, symbols, and numbers."""
+    password_letter = [random.choice(letters) for _ in range(random.randint(4, 6))]
+    password_symbol = [random.choice(symbols) for _ in range(random.randint(2, 4))]
+    password_number = [random.choice(numbers) for _ in range(random.randint(2, 4))]
 
-password_list = password_letter + password_number + password_symbol
-random.shuffle(password_list)
+    password_list = password_letter + password_number + password_symbol
+    random.shuffle(password_list)
 
-# Imported password to main.py file
-password = "".join(password_list)
+    return "".join(password_list)
